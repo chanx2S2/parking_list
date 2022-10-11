@@ -25,7 +25,7 @@ class MyList extends StatefulWidget {
 
 class _MyListState extends State<MyList> {
 
-  var parkinglotList = [
+  static var parkinglotList = [
     '1번 주차장',
     '2번 주차장',
     '3번 주차장',
@@ -35,7 +35,7 @@ class _MyListState extends State<MyList> {
     '7번 주차장',
   ];
 
-  var parkinglotDistance = [
+  static var parkinglotDistance = [
     '100m',
     '200m',
     '10m',
@@ -94,7 +94,7 @@ class _MyListState extends State<MyList> {
                             width: width,
                             child: Text(
                               parkinglotDistance[index],
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.amberAccent
