@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:parking_list/another_page.dart';
 import 'package:parking_list/model.dart';
 
+// 객체로 만들어서 데이터들이 오름차순으로 정렬될 수 있도록 만든다.
+
 void main(){
   runApp(const MyApp());
 }
@@ -28,13 +30,13 @@ class MyList extends StatefulWidget {
 class _MyListState extends State<MyList> {
 
   static List<String> parkinglotList = [
-    '1번 주차장',
-    '2번 주차장',
-    '3번 주차장',
-    '4번 주차장',
-    '5번 주차장',
-    '6번 주차장',
-    '7번 주차장',
+    '1st Parkinglot',
+    '2nd Parkinglot',
+    '3rd Parkinglot',
+    '4th Parkinglot',
+    '5th Parkinglot',
+    '6th Parkinglot',
+    '7th Parkinglot',
   ];
 
   static List<String> parkinglotDistance = [
@@ -98,41 +100,6 @@ class _MyListState extends State<MyList> {
                     ),
                   ),
                 ),
-                // child: Row(
-                //   children: [
-                //     const SizedBox(
-                //       width: 100,
-                //       height: 100,
-                //     ),
-                //     Padding(padding: const EdgeInsets.all(10),
-                //       child: Column(
-                //         children: [
-                //           Text(parkinglotList[index],
-                //             style: const TextStyle(
-                //               fontSize: 30,
-                //               fontWeight: FontWeight.bold,
-                //               color: Colors.black,
-                //             ),
-                //           ),
-                //           const SizedBox(
-                //             height: 10,
-                //           ),
-                //           SizedBox(
-                //             width: width,
-                //             child: Text(
-                //               parkinglotDistance[index],
-                //               style: const TextStyle(
-                //                 fontSize: 20,
-                //                 fontWeight: FontWeight.bold,
-                //                 color: Colors.amberAccent
-                //               ),
-                //             ),
-                //           )
-                //         ],
-                //       ),
-                //     ),
-                //   ],
-                // ),
               ),
             );
           },
