@@ -47,6 +47,7 @@ class _MyListState extends State<MyList> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: AppBar(
         title: const Text('가장 가까운 주차장',
@@ -55,8 +56,61 @@ class _MyListState extends State<MyList> {
           ),
         ),
         backgroundColor: Colors.lightBlue,
+        elevation: 0,
       ),
-    );
+      body: ListView.builder(
+          itemCount: parkinglotList.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: (){
+                debugPrint(parkinglotList[index]);
+              },
+              child: Card(
+                child: Row(
+                  children: [
+                    const SizedBox(
+                      width: 100,
+                      height: 100,
+                    ),
+                    Padding(padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          // const Icon(
+                          //   Icons.local_parking_rounded,
+                          //   color: Colors.lightBlue,
+                          //   size: 50,
+                          // ),
+                          Text(parkinglotList[index],
+                            style: const TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: width,
+                            child: Text(
+                              parkinglotDistance[index],
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.amberAccent
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      );
+    }
   }
-}
 
